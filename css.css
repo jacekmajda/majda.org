@@ -1,0 +1,204 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1920px;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #000000;
+  background-image: radial-gradient(#2e2e2e, #041607);
+  font-size: 1.5rem;
+}
+.logo, .wrapper{
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow:
+      0 0 1ex rgba(51, 255, 51, 1),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
+.lang{
+  cursor: pointer;
+}
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("tenor.gif");
+  background-size: contain;
+  z-index: 10000000000000000000;
+  opacity: .03;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+      repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0) 100%);
+  background-size: auto 4px;
+  z-index: 10000000000000000000;
+}
+.banner {
+  margin-top: 8%;
+}
+.terminal {
+  padding: 0 3rem;
+}
+.logo{
+  font-size: 5vh;
+}
+.title{
+  font-size: 4.6vh;
+  text-align: center;
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+.output{
+  font-size: 3vh;
+  padding: 0.5rem 0;
+}
+
+.blink {
+  font-weight: 900;
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+nav.nav{
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+}
+nav.nav, div.menu{
+  box-shadow: none;
+  font-size: 1.2rem;
+}
+div.menu{
+  overflow: hidden;
+}
+.pseudo.button{
+  font-weight: 900;
+}
+.burger.pseudo.button::before {
+  content: "\2630";
+}
+
+nav .show:checked  + .pseudo.button.vis{
+  opacity: 0.000000001;
+}
+nav .show:checked ~ .menu{
+  background-image: radial-gradient(#2e2e2e, #041607);
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  box-shadow: -10px 0px 5px 0px rgb(4, 20, 4);
+}
+.menu > a:hover, .logo:hover {
+  text-decoration: underline;
+}
+
+.section-title{
+  text-align: center;
+  font-size: 5vh;
+}
+.portfo.flex > div {
+  padding: 0 1vw;
+  margin: 0;
+}
+.portfo.flex{
+  width: 90vw;
+  margin: 0 auto;
+}
+#art{
+  align-self: center;
+  background-color: transparent;
+  border: solid 1px rgb(31, 153, 31);
+}
+#art header{
+  padding: 0.6em 0.3em;
+}
+#art header h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 2.6vh;
+  line-height: 1.5;
+}
+#art footer{
+  height: 200px;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+}
+#art footer.las{
+  background-image: url("las.png");
+}
+#art footer.szewska{
+  background-image: url("szewska.png");
+}
+#art footer.et{
+  background-image: url("et.png");
+}
+#art footer.ud{
+  background-image: url("ud.png");
+}
+.portfolio-link, .contact{
+  color: rgba(128, 255, 128, 0.8);
+}
+#art:hover{
+  box-shadow:
+    1px 1px 0px rgba(51, 255, 51, 1), 
+    -1px -1px 5px 0px rgba(51, 255, 51, 1);
+}
+.contact-box{
+  padding: 0 7vw;
+}
+.contact{
+  margin: 10px auto;
+  padding: 10px 0;
+  display: block;
+}
+.contact:hover, .lang:hover{
+  font-weight: 900;
+}
+.ab-text, .off-text{
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.off-text > p, .ab-text > p {
+  margin-bottom: 2%;
+  text-align: left;
+}
+.burger.pseudo.button::before{
+  content: "";
+}
+@media all and (max-width: 60em) {
+  .vis{
+    display: block;
+  }
+}
+.vis{
+  display: none;
+  font-size: 30px;
+}
