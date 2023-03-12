@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+ 
+:root {
+  --clr-black: 0 0% 20%;
+  --clr-gray: 0 0% 98%;
+  --clr-white: 0 0% 100%;
+ 
+ --ff-sans-body: 'Inter', sans-serif;
+ 
+  /* --container-padding: 20px; */
+}
+
+@media (min-width: 640px) {
+}
+@media (min-width: 1024) {
+}
+.container {
+    position: relative;
+    max-width: 1440px;
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+}
+
+.navigation {
+   padding: 20px 0; 
+   align-items: center;
+   justify-content: space-between;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 600;
+    color: hsl(var(--clr-black));
+}
+
+.navigation-menu ul {
+    justify-content: right;
+    list-style: none;
+    align-items:center;
+}
+
+.navigation-menu li {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 25px;
+    list-style: none;
+    align-items:center;
+}
+.navigation-menu a {
+  color: hsl(var(--clr-black));
+}
+
+a.button {
+    background-color: hsl(var(--clr-black));
+    color: hsl(var(--clr-white));
+    border-radius: 8px;
+    border-radius: 8px;
+    line-height: 30px;
+    padding: 20px 40px;
+}
+
+/* hero */
+.hero {
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+    display: grid;
+    Grid-template-columns: 490px 1fr;
+}
+
+.hero .img {
+    position: relative;
+    width: 580px;
+    height: 591px;
+}
+.hero img {
+    position: absolute;
+}
+.hero-section{
+    margin-top: 40px;
+    text-align: right;
+    z-index: 2;
+    flex-direction: column;
+    align-content: left;
+    align-items: flex-end;
+}
+h1 {
+    font-size: 76px;
+    line-height: 90px;
+}
+.hero-section p {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #6B6969;
+}
+.hero-section .button {
+    font-size: 22px;
+    padding: 20px 40px;
+    margin-top: 40px;
+}
+ /* MEET JACK SECTION */
+ .meet-section {
+    margin-top: 100px;
+    justify-content: space-between;
+ }
+ aside {
+    width: 650px;
+    flex-direction: column;
+ }
+ aside h2 {
+    font-size: 56px;
+ }
+ aside h3 {
+    margin-top: 60px;
+    font-weight: 400;
+    font-size: 42px;
+ }
+ aside p {
+    margin-top: 60px;
+    font-size: 24px;
+ }
+ aside .button {
+    align-self: flex-start;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 60px;
+    border-radius: 8px;
+    line-height: 30px;
+    padding: 20px 40px;
+ }
+ .help-section {
+    padding-top: 80px;
+ }
+ .help-section, .help-section .icon-section  {
+    flex-direction: column;
+ }
+ .help-section .icon-section .img img {
+    width: 140px;
+ }
+ /* projects section */
+ .wrapper {
+    background-color: #FAFAFA;
+ }
+ .projects-container {
+    margin-bottom: 100px;
+ }
+ .project-section {
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+ }
+ .project {
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+ }
+ .project-data {
+    flex-direction: column;
+ }
+ .project-section h2 {
+    margin-top: 100px;
+    font-size: 64px;
+ }
+ .project .project-data h3 {
+    font-weight: 600;
+    font-size: 42px;
+ }
+ .project .project-data p {
+    margin-top: 20px;
+    font-size: 24px;
+ }
+ .project .project-data a {
+    margin-top: 50px;
+    font-size: 22px;
+    color: #333;
+ }
+ .project {
+    padding: 50px 0;
+ }
+ .project img {
+    width: 440px;
+ }
+ .project-section .button {
+    font-size: 22px;
+    border-radius: 8px;
+    line-height: 30px;
+    padding: 20px 40px;
+ }
+ /* talk & contact */
+ .talk-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #333333;
+    justify-content: center;
+    align-items: center;
+ }
+ .talk-section img{
+    margin: auto;
+    width: 371px;
+    height: 198px;
+ }
+ .talk-section h2 {
+    font-size: 72px;
+    color: #fff;
+ }
+ .talk-section p {
+    padding-bottom: 50px;
+    font-size: 24px;
+    color: #fff;
+ }
+ .talk-section form {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+ .talk-section input {
+    color: #B3B3B3;
+    background-color: #333;
+    border: white solid 2px;
+    width: 675px;
+    font-size: 22px;
+    border-radius: 8px;
+    line-height: 30px;
+    padding: 20px 40px;
+ }
+ .talk-section button {
+    margin-top: 20px;
+    width: 675px;
+    font-size: 22px;
+    border-radius: 8px;
+    line-height: 30px;
+    padding: 20px 40px;
+    background-color: #FFFFFF;
+    color: #333;
+ }
+ .contact-section {
+    width: 1024px;
+    margin: 80px auto;
+ }
+.contact-description{
+    width: 50%;
+}
+.contact-description h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.contact-description p {
+    width: 75%;
+    font-size: 18px;
+}
+ .contact-data {
+    width: 50%;
+    flex-direction: column;
+ }
+
+ .contact-data a {
+    margin: 5px 0;
+    color: #6B6969;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--clr-black);
+ }
+ .socials-container {
+    margin-top: 30px;
+ }
+ .socials-container a {
+    margin-right: 20px;
+    padding: 10px 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+ }
+.flex {
+    display: flex;
+}
+
+.flow > *:not(:last-child) {
+    margin-bottom: var(--space, 20px);
+}
+
+
+ 
+ 
+/* ----------- */
+/* Reset       */
+/* ----------- */
+ 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+ 
+/* Box sizing */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+ 
+html,
+body {
+  overflow-x: hidden;
+}
+ 
+/* Set core root defaults */
+html, html:focus-within {
+  scroll-behavior: smooth;
+}
+ 
+/* Set core body defaults */
+body {
+  height: 100%;
+  font-family: var(--ff-sans-body);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-black));
+  background-color: hsl(var(--clr-white));
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+ 
+  display: block;
+  /* display: grid;
+  grid-template-rows: min-content 1fr; */
+}
+ 
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+}
+ 
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+ 
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+ 
+button {
+  border: 0;
+}
+ 
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+ 
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
