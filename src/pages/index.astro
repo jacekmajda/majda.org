@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MainNavbar from '../components/MainNavbar.astro';
+import PageHero from '../components/PageHero.astro';
+import PageSection from '../components/atoms/PageSection.astro';
+import ServicesGrid from '../components/molecules/ServicesGrid.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <MainNavbar />
+  <main>
+    <PageSection padding={['pt-large', 'pb-large']}>
+      <PageHero />
+    </PageSection>
+    <PageSection padding={['pt-large', 'pb-large']}>
+      <div class="about grid">
+        <div class="about__text-column flex" style="--gap: 2rem">
+          <h2 class="heading--2">MEET JACK</h2>
+          <p>I am an experienced programmer with a strong background in software development and expertise in multiple programming languages.</p>
+          <p>I enjoy tackling complex challenges and I am a team player who communicates effectively with colleagues and clients.</p>
+          <a href="#" class="button">Chat with me &#8594</a>
+         <ServicesGrid />
+        </div>
+        <div class="about__img">
+          <img src="jack.png" alt="rocket image">
+        </div>
+      </div>
+    </PageSection>
+  </main>
+</Layout>
+
+<style>
+.about {
+  --grid-gap: 3rem;
+  grid-template-columns: 2fr 1fr;
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin: 0 auto;
+}
+
+.about__text-column {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.about__img {
+  display: flex;
+  max-width: 400px;
+  justify-content: center;
+  align-items: flex-end;
+}
+</style>

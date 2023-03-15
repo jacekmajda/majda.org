@@ -1,0 +1,62 @@
+---
+const services = [
+  {
+    icon: 'website.svg',
+    title: 'Creating Websites',
+  },
+  {
+    icon: 'seo.svg',
+    title: 'SEO',
+  },
+  {
+    icon: 'server.svg',
+    title: 'Configuring servers',
+  },
+  {
+    icon: 'app.svg',
+    title: 'Creating Apps',
+  },
+  {
+    icon: 'hosting.svg',
+    title: 'Hosting & domains',
+  },
+  {
+    icon: 'ux.svg',
+    title: 'UX/UI',
+  }
+]
+---
+ <h3 class="heading--4" style="font-weight: 400;">I CAN HELP YOU WITH</h3>
+ <div class="card-section grid">
+  {
+    services.map((service, index) => {
+      return (
+        <div class="card flex flex-col" style="--gap: 1rem">
+            <div class="card-image flex">
+              <img src={`assets/${service.icon}`} alt={service.title + ' line drawing'} />
+            </div>
+            <p>{service.title}</p>
+        </div>
+      )
+    })
+  }
+</div>
+
+<style>
+.card-section {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+.card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card-image {
+  justify-content: center;
+  align-items: center;
+}
+.card-image img {
+  height: 70px
+}
+</style>
