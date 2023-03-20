@@ -1,6 +1,7 @@
-import "@lottiefiles/lottie-player";
+// import "@lottiefiles/lottie-player";
 
 export default function Lottie() {
+
   return (
       <lottie-player
         autoplay

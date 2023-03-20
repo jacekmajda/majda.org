@@ -2,7 +2,7 @@ import './ContactFormStyles.module.css';
 import { createSignal, Show } from 'solid-js'
 import { createStore } from "solid-js/store";
 
-import "@lottiefiles/lottie-player";
+// import "@lottiefiles/lottie-player";
 
 
 
