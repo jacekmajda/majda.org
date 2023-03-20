@@ -1,0 +1,19 @@
+form {
+  margin-top: 3rem;
+  width: 100%;
+}
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    color: hsl(var(--color-white));
+    padding: 1rem 2rem;
+    border: 1px solid hsl(var(--color-white));
+    background-color: hsl(var(--color-black));
+    border-radius: 8px;
+    line-height: 1.3;
+}
+input:focus, input:focus-visible {
+  outline: 2px solid hsl(var(--color-white)/0.5);
+}
+.button {
+    width: 100%;
+}

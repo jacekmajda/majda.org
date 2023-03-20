@@ -1,3 +1,8 @@
+---
+
+import ContactForm from '../molecules/form/ContactForm';
+---
+
 <div class="form-section">
   <div class="container">
     <div class="contact-info flex flex-col">
@@ -5,10 +10,7 @@
       <h2 class="heading--2">LET'S TALK</h2>
       <p>Leave your email and I will contact you. No spam, I promise!</p>
     </div>
-    <form action="POST" class="form flex flex-col">
-        <input type="email" name="email" placeholder="Email">
-        <button type="submit" name="submit" class="button button--negative">Send</button>
-    </form>
+    <ContactForm client:visible />
   </div>
 </div>
 

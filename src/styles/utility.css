@@ -60,7 +60,12 @@
   white-space: nowrap;
   border-width: 0;
 }
-
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
 .flex {
   display: flex;
   gap: var(--gap, 1rem);

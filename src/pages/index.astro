@@ -5,7 +5,7 @@ import PageHero from "../components/PageHero.astro";
 import PageSection from "../components/atoms/PageSection.astro";
 import ServicesGrid from "../components/molecules/ServicesGrid.astro";
 import ProjectCard from "../components/atoms/ProjectCard.astro";
-import ContactForm from '../components/molecules/ContactForm.astro';
+import ContactFormSection from '../components/organizms/ContactFormSection.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -48,7 +48,6 @@ import ContactForm from '../components/molecules/ContactForm.astro';
           image="/assets/face.svg"
         />
         <ProjectCard
-
           title="ET Marketing Solutions"
           description="London based award wining marketing agency."
           link="etmarketingsolutions.co.uk"
@@ -63,7 +62,7 @@ import ContactForm from '../components/molecules/ContactForm.astro';
         />
       </div>
     </PageSection>
-      <ContactForm />
+    <ContactFormSection />
   </main>
 </Layout>
 

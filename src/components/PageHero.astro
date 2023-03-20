@@ -1,6 +1,17 @@
+---
+import Lottie from '../components/atoms/Lottie'
+---
 <div class="hero grid" style="--gap: 3rem;">
   <div class="hero__image-wrapper">
-    <img src="/assets/rocket.svg" alt="Rocket image" />
+    <!-- <img src="/assets/rocket.svg" alt="Rocket image" /> -->
+<div>
+        <Lottie
+          client:visible
+          style="width: 600px"
+        >
+        </Lottie>
+</div>
+
   </div>
   <div class="hero-section flex">
     <h1 class="heading--1">Let’s create a website together!</h1>
@@ -22,11 +33,11 @@
   .hero__image-wrapper {
     position: relative;
   }
-  .hero__image-wrapper img {
+  .hero__image-wrapper div {
     display: flex;
     position: absolute;
     min-width: 600px;
-    height: auto;
+    height: 600px;
     left: -20%;
     bottom: -120px;
   }
