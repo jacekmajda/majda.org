@@ -7,6 +7,8 @@ interface Props {
 }
 
 const {
+  author = "Jacek Majda",
+  keywords = "Majda, website, app, consultation, digital goals",
   title = "Majda.org - create a website with me",
   description = "Contact me today to schedule a consultation and see how I can help you reach your digital goals by creating custom, responsive website and functional app tailored to your needs.",
 } = Astro.props;
@@ -16,6 +18,22 @@ const {
 <meta name="robots" content="index, follow">
 <meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
+<meta name="author" content={author}>
+<meta name="keywords" content={keywords}>
+
+<!-- Open Graph protocol metadata -->
+<meta property="og:title" content={title}>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://majda.org">
+<meta property="og:image" content="https://majda.org/images/logo.png">
+<meta property="og:description" content="Contact me today to schedule a consultation and see how I can help you reach your digital goals by creating custom, responsive website and functional app tailored to your needs.">
+
+<!-- Twitter metadata -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content="https://majda.org/images/logo.png">
+
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
