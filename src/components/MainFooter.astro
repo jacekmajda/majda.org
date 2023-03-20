@@ -1,0 +1,103 @@
+---
+import PageSection from "../components/atoms/PageSection.astro";
+import { Icon } from "astro-icon";
+
+const date = new Date().getFullYear()
+---
+<footer>
+  <!-- two column grid laoyt footer in html -->
+  <PageSection padding={["pt-medium", "pb-small"]}>
+    <div class="grid">
+      <div class="company-info flex flex-col">
+        <div class="logo">
+          <div class="logo__image-wrapper">
+            <img src="/assets/jm-logo.svg" alt="logo of Majda.org company">
+          </div>
+            <a href="#">MAJDA<span>.ORG</span></a>
+        </div>
+        <p>Contact me today to schedule a consultation and see how I can help you reach your digital goals by creating beautiful website or functional app.</p>
+      </div>
+      <div class="contact-info flex flex-col">
+        <div class="flex items-center">
+          <h5>Email me!</h5>
+          <a href="mailto:jacek@majda.org">jacek@majda.org</a>
+        </div>
+        <div class="flex items-center">
+          <h5>Call me!</h5>
+          <a href="phone:0048514552522">+48 514 552 522</a>
+        </div>
+        <div class="social-icons flex" style="--gap: 0.5rem">
+          <a  href="https://www.linkedin.com/in/jacekmajda/" target="_blank">
+            <Icon name="prime:linkedin" class="link-icon" />
+          </a>
+          <a  href="https://github.com/jacekmajda" target="_blank">
+            <Icon name="prime:github" class="link-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </PageSection>
+  <div class="disclaimer">
+    <div class="container">
+      <p class="text-center">© { date } Majda.org All rights reserved. Page designed and developed in cooperation with <a href="https://www.linkedin.com/in/pk-design/" target="_blank" >Patryk Kurzeja</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .grid {
+    --grid-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+.company-info p {
+  font-size: var(--fs-300);
+  color: hsl(var(--color-dark-gray));
+}
+.link-icon {
+  width: 2.5rem;
+  color: hsl(var(--color-dark-gray));
+}
+.link-icon:hover {
+  color: hsl(var(--color-black));
+}
+
+.contact-info a,
+.contact-info h5 {
+  font-size: var(--fs-300);
+}
+
+.contact-info a {
+ font-weight: 700;
+}
+
+.contact-info h5 {
+ font-weight: 400;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo a {
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(var(--color-black));
+}
+.logo img {
+  border-radius: 50%;
+  border: 1px solid hsl(var(--color-black));
+  width: 36px;
+  height: 36px;
+  margin-right: 1rem;
+}
+.logo span {
+  font-weight: 400;
+}
+.disclaimer {
+  padding: 1rem 0;
+  color: hsl(var(--color-dark-gray) / .8);
+  font-size: var(--fs-200);
+
+}
+</style>

@@ -6,10 +6,11 @@ import PageSection from "../components/atoms/PageSection.astro";
 import ServicesGrid from "../components/molecules/ServicesGrid.astro";
 import ProjectCard from "../components/atoms/ProjectCard.astro";
 import ContactFormSection from '../components/organizms/ContactFormSection.astro';
+import MainFooter from '../components/MainFooter.astro';
 
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <MainNavbar />
   <main>
     <PageSection padding={["pt-large", "pb-large"]}>
@@ -44,27 +45,28 @@ import ContactFormSection from '../components/organizms/ContactFormSection.astro
         <ProjectCard
         reversed
           title="Beauty Kingdom Awards"
-          description="British awards to appreciate other businesses in the industry."
+          description="British awards to recognize businesses in the beauty industry."
           link="beautykingdomawards.co.uk"
           image="/assets/face.svg"
         />
         <ProjectCard
           title="ET Marketing Solutions"
-          description="London based award wining marketing agency."
+          description="London based, award wining marketing agency."
           link="etmarketingsolutions.co.uk"
           image="/assets/speaker.svg"
         />
         <ProjectCard
         reversed
           title="Szewska 64"
-          description="London based award wining marketing agency."
-          link="etmarketingsolutions.co.uk"
+          description="The oldest antique bookstore in Wroclaw."
+          link="szewska64.pl"
           image="/assets/books.svg"
         />
       </div>
     </PageSection>
     <ContactFormSection />
   </main>
+  <MainFooter />
 </Layout>
 
 <style>
