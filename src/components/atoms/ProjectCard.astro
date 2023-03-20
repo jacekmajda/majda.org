@@ -1,0 +1,92 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  reversed?: boolean;
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+}
+const { reversed, image, title, description, link } = Astro.props;
+---
+
+<div class:list={["project-card", { "project-card--reverse": reversed }]}>
+  <div class="project-card__image">
+    <img src={image} alt="card image" />
+  </div>
+  <div class="project-card__content flex flex-col">
+    <h3 class="heading--3">{title}</h3>
+    <p>{description}</p>
+    <a class="link" href={`https://${link}`} target="_blank">
+      {link}<Icon name="prime:external-link" class="link-icon" />
+    </a>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    --template-columns: 1fr 2fr;
+    --gap: 0.5rem;
+    display: grid;
+    grid-template-columns: var(--template-columns);
+    grid-gap: 4rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-card__image {
+    width: 380px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+  }
+  .project-card__image img{
+    width: 100%;
+  }
+  .link {
+    border-radius: 6px;
+    position: relative;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0.3rem 0;
+    display: inline-flex;
+    width: fit-content;
+    color: hsl(var(--color-black) / 0.75);
+    transition: color 0.2s ease-in-out;
+    /* border-bottom: 1px solid hsl(var(--color-black)/0.75); */
+  }
+
+  .link::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: hsl(var(--color-black) / 0.75);
+    transition: transform 0.15s ease-in-out;
+    transform-origin: 0%;
+    transform: scaleX(0);
+  }
+  .link:hover {
+    color: hsl(var(--color-black) / 1);
+    /* text-decoration: underline; */
+  }
+  .link:hover::after {
+    transform: scaleX(1);
+  }
+  .link-icon {
+    width: 1.2rem;
+    margin-left: 0.3rem;
+  }
+
+  .project-card--reverse {
+    --template-columns: 2fr 1fr;
+  }
+  .project-card--reverse .project-card__image {
+    order: 2;
+  }
+</style>

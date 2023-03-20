@@ -1,18 +1,22 @@
 ---
 interface Props {
-  padding?: ('pt-small'| 'pt-medium'| 'pt-large'| 'pb-large' | 'pb-small'| 'pb-medium')[];
+  padding?: (
+    | "pt-small"
+    | "pt-medium"
+    | "pt-large"
+    | "pb-large"
+    | "pb-small"
+    | "pb-medium"
+  )[];
 }
 
-const {padding} = Astro.props
-
+const { padding, ...attrs } = Astro.props;
 ---
 
-<section class="container" class:list={[
-  padding
-]}>
+<section class="container" class:list={[padding]} {...attrs}>
   <slot />
 </section>
-<style >
+<style>
   .pt-large {
     padding-top: 120px;
   }
@@ -32,6 +36,4 @@ const {padding} = Astro.props
   .pb-small {
     padding-bottom: 40px;
   }
-
-
 </style>

@@ -6,51 +6,49 @@
     <h1 class="heading--1">Let’s create a website together!</h1>
     <p>
       Contact me today to schedule a consultation and see how I can help you
-      reach your digital goals by creating beautiful website and functional
-      app.
+      reach your digital goals by creating beautiful website and functional app.
     </p>
     <a href="#" class="button">Write to me &#8594</a>
   </div>
 </div>
 
 <style>
+  /* hero */
+  .hero {
+    /* margin: 100px auto 0 auto; */
+    grid-template-columns: 1fr 2fr;
+  }
 
-/* hero */
-.hero {
-  /* margin: 100px auto 0 auto; */
-  grid-template-columns: 1fr 2fr;
-}
-
-.hero__image-wrapper {
-  position: relative;
-}
-.hero__image-wrapper img {
-  display: flex;
-  position: absolute;
-  min-width: 600px;
-  height: auto;
-  left: -20%;
-  bottom: -120px;
-}
-.hero-section {
-  text-align: right;
-  z-index: 2;
-  flex-direction: column;
-  align-content: left;
-  align-items: flex-end;
-}
-/* h1 {
+  .hero__image-wrapper {
+    position: relative;
+  }
+  .hero__image-wrapper img {
+    display: flex;
+    position: absolute;
+    min-width: 600px;
+    height: auto;
+    left: -20%;
+    bottom: -120px;
+  }
+  .hero-section {
+    text-align: right;
+    z-index: 2;
+    flex-direction: column;
+    align-content: left;
+    align-items: flex-end;
+  }
+  /* h1 {
   font-size: 76px;
   line-height: 90px;
 } */
-.hero-section p {
-  line-height: 1.3;
-  font-size: var(--fs-400);
-  color: hsl(var(--color-dark-gray));
-}
-.hero-section .button {
-  /* font-size: 22px; */
-  /* padding: 20px 40px; */
-  margin-top: 1rem;
-}
+  .hero-section p {
+    line-height: 1.3;
+    font-size: var(--fs-400);
+    color: hsl(var(--color-dark-gray));
+  }
+  .hero-section .button {
+    /* font-size: 22px; */
+    /* padding: 20px 40px; */
+    margin-top: 1rem;
+  }
 </style>

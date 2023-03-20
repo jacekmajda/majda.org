@@ -1,6 +1,12 @@
 @media (min-width: 640px) {
+  .container {
+    --container-padding: 120px;
+  }
 }
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
+  .container {
+    --container-padding: 20px;
+  }
 }
 
 .container {
@@ -24,11 +30,24 @@
   background-color: hsl(var(--color-black) / 0.9);
 }
 .button--small {
-  --padding-x: .5rem;
+  --padding-x: 0.5rem;
   --padding-y: 1rem;
   --border-radius: 4px;
 }
-
+.button--negative {
+  color: hsl(var(--color-black));
+  background-color: hsl(var(--color-white));
+  width: 100%;
+}
+.button--negative:hover {
+  background-color: hsl(var(--color-white) / 0.9);
+}
+.button--negative:focus, .button--negative:focus-visible {
+  outline: 2px solid hsl(var(--color-white)/0.5);
+}
+*:focus, *:focus-visible {
+  outline: 2px solid hsl(var(--color-black)/0.5);
+}
 
 .sr-only {
   position: absolute;
@@ -59,7 +78,7 @@
   display: block;
 }
 
-.flow>*:where(:not(:first-child)) {
+.flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 

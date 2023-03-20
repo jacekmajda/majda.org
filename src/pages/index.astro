@@ -1,52 +1,103 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import MainNavbar from '../components/MainNavbar.astro';
-import PageHero from '../components/PageHero.astro';
-import PageSection from '../components/atoms/PageSection.astro';
-import ServicesGrid from '../components/molecules/ServicesGrid.astro';
+import MainNavbar from "../components/MainNavbar.astro";
+import PageHero from "../components/PageHero.astro";
+import PageSection from "../components/atoms/PageSection.astro";
+import ServicesGrid from "../components/molecules/ServicesGrid.astro";
+import ProjectCard from "../components/atoms/ProjectCard.astro";
+import ContactForm from '../components/molecules/ContactForm.astro';
 ---
 
 <Layout title="Welcome to Astro.">
   <MainNavbar />
   <main>
-    <PageSection padding={['pt-large', 'pb-large']}>
+    <PageSection padding={["pt-large", "pb-large"]}>
       <PageHero />
     </PageSection>
-    <PageSection padding={['pt-large', 'pb-large']}>
+    <PageSection padding={["pt-large", "pb-large"]}>
       <div class="about grid">
-        <div class="about__text-column flex" style="--gap: 2rem">
+        <div class="about__text-column flex">
           <h2 class="heading--2">MEET JACK</h2>
-          <p>I am an experienced programmer with a strong background in software development and expertise in multiple programming languages.</p>
-          <p>I enjoy tackling complex challenges and I am a team player who communicates effectively with colleagues and clients.</p>
+          <div class="flex flex-col">
+            <p>
+              I am an experienced programmer with a strong background in
+              software development and expertise in multiple programming
+              languages.
+            </p>
+            <p>
+              I enjoy tackling complex challenges and I am a team player who
+              communicates effectively with colleagues and clients.
+            </p>
+          </div>
           <a href="#" class="button">Chat with me &#8594</a>
-         <ServicesGrid />
+          <ServicesGrid />
         </div>
         <div class="about__img">
-          <img src="jack.png" alt="rocket image">
+          <img src="jack.png" alt="rocket image" />
         </div>
       </div>
     </PageSection>
+    <PageSection padding={["pt-large", "pb-large"]}>
+      <h2 class="heading--2">SEE RECENT PROJECTS</h2>
+      <div class="project-grid grid">
+        <ProjectCard
+        reversed
+          title="Beauty Kingdom Awards"
+          description="British awards to appreciate other businesses in the industry."
+          link="beautykingdomawards.co.uk"
+          image="/assets/face.svg"
+        />
+        <ProjectCard
+
+          title="ET Marketing Solutions"
+          description="London based award wining marketing agency."
+          link="etmarketingsolutions.co.uk"
+          image="/assets/speaker.svg"
+        />
+        <ProjectCard
+        reversed
+          title="Szewska 64"
+          description="London based award wining marketing agency."
+          link="etmarketingsolutions.co.uk"
+          image="/assets/books.svg"
+        />
+      </div>
+    </PageSection>
+      <ContactForm />
   </main>
 </Layout>
 
 <style>
-.about {
-  --grid-gap: 3rem;
-  grid-template-columns: 2fr 1fr;
-  /* align-items: center; */
-  /* justify-content: center; */
-  margin: 0 auto;
-}
+  .about {
+    --grid-gap: 3rem;
+    grid-template-columns: 2fr 1fr;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: 0 auto;
+  }
 
-.about__text-column {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.about__img {
-  display: flex;
-  max-width: 400px;
-  justify-content: center;
-  align-items: flex-end;
-}
+  .about__text-column {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .about__text-column > div {
+    margin-top: 1rem;
+  }
+  .about__text-column > .button {
+    margin-top: 2rem;
+  }
+  .about__img {
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .project-grid {
+    --grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    margin: 3rem auto 0;
+    /* max-width: 920px; */
+  }
 </style>
