@@ -10,9 +10,9 @@ const date = new Date().getFullYear()
       <div class="company-info flex flex-col">
         <div class="logo">
           <div class="logo__image-wrapper">
-            <img src="/assets/jm-logo-square.svg" alt="logo of Majda.org company">
+            <img src="/assets/jm-logo-square-transparent.svg" alt="logo of Majda.org company">
           </div>
-            <a href="#">MAJDA<span>.ORG</span></a>
+          <div>MAJDA<span>.ORG</span></div>
         </div>
         <p>Contact me today to schedule a consultation and see how I can help you reach your digital goals by creating beautiful website or functional app.</p>
       </div>
@@ -89,14 +89,13 @@ const date = new Date().getFullYear()
   display: flex;
   align-items: center;
 }
-.logo a {
+.logo div {
   font-size: 24px;
   font-weight: 700;
   color: hsl(var(--color-black));
 }
 .logo img {
-  border-radius: 3px;
-  border: 1px solid hsl(var(--color-black)/ .05);
+  border-radius: 4px;     var(--color-black)/ .05);
   width: 36px;
   height: 36px;
   margin-right: 1rem;
@@ -108,6 +107,6 @@ const date = new Date().getFullYear()
   padding: 1rem 0;
   color: hsl(var(--color-dark-gray) / .8);
   font-size: var(--fs-200);
-
 }
+
 </style>
