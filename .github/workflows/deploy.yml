@@ -1,0 +1,81 @@
+name: Deploy npm
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  repository_dispatch:
+    types: [publish_web_page]
+
+  workflow_dispatch:
+    inputs:
+      cacheControl:
+        description: 'Cache Control - type `no-cache` to run pure dependencies install'
+        required: false
+        default: ''
+
+jobs:
+  build:
+    name: Build and generate project
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [18]
+
+    steps:
+      - name: set up Github repo
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Get npm cache directory path 🛠
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache node modules 📦
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install project dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build project
+        run: |
+          npm run build
+
+      - name: Deploy to production branch 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: production
+          folder: dist
+          target-folder: dist
+
+  # deploy:
+  #   name: Deploy to server
+  #   needs: [build]
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: production
+  #     - name: 📂 Sync files via ssh to production
+  #       uses: appleboy/scp-action@v0.1.3
+  #       with:
+  #         host: ${{ secrets.BEAUTY_FTP_SERVER }}
+  #         username: ${{ secrets.BEAUTY_USERNAME }}
+  #         key: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         passphrase: ${{ secrets.PASSPHRASE}}
+  #         port: 22
+  #         source: "./dist/**"
+  #         target: "./domains/beautykingdomawards.co.uk/public_html/"
+  #         strip_components: 1
