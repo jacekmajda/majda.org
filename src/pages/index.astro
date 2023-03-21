@@ -19,7 +19,7 @@ import MainFooter from '../components/MainFooter.astro';
     <PageSection padding={["pt-large", "pb-large"]}>
       <div class="about grid">
         <div class="about__text-column flex">
-          <h2 class="heading--2">MEET JACK</h2>
+          <h2 id="about" class="heading--2">MEET JACK</h2>
           <div class="flex flex-col">
             <p>
               I am an experienced programmer with a strong background in
@@ -31,16 +31,16 @@ import MainFooter from '../components/MainFooter.astro';
               communicates effectively with colleagues and clients.
             </p>
           </div>
-          <a href="#" class="button">Chat with me &#8594</a>
+          <a href="#contact" class="button">Chat with me &#8594</a>
           <ServicesGrid />
         </div>
         <div class="about__img">
-          <img src="jack.png" alt="rocket image" />
+          <img src="jack.png" alt="Jacek Majda portrait" />
         </div>
       </div>
     </PageSection>
-    <PageSection padding={["pt-large", "pb-large"]}>
-      <h2 class="heading--2">SEE RECENT PROJECTS</h2>
+    <PageSection backgroundColor={'var(--color-gray)'} padding={["pt-large", "pb-large"]}>
+      <h2 id="projects" class="heading--2">SEE RECENT PROJECTS</h2>
       <div class="project-grid grid">
         <ProjectCard
         reversed
@@ -72,16 +72,14 @@ import MainFooter from '../components/MainFooter.astro';
 <style>
   .about {
     --grid-gap: 3rem;
-    grid-template-columns: 2fr 1fr;
-    /* align-items: center; */
-    /* justify-content: center; */
+    grid-template-columns: 1fr;
     margin: 0 auto;
   }
 
   .about__text-column {
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
   }
   .about__text-column > div {
     margin-top: 1rem;
@@ -90,16 +88,32 @@ import MainFooter from '../components/MainFooter.astro';
     margin-top: 2rem;
   }
   .about__img {
+    margin: auto;
     display: flex;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     justify-content: center;
     align-items: flex-end;
   }
 
   .project-grid {
-    --grid-gap: 1rem;
+    --grid-gap: 3rem;
     grid-template-columns: 1fr;
     margin: 3rem auto 0;
     /* max-width: 920px; */
+  }
+  @media (min-width: 640px) {
+    .about__text-column {
+    align-items: flex-start;
+  }
+  }
+  @media (min-width: 1024px) {
+    .about {
+      grid-template-columns: 2fr 1fr;
+    }
+    .about__img {
+    margin: 0;
+    width: 400px;
+  }
   }
 </style>

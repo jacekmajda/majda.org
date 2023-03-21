@@ -1,0 +1,8 @@
+.rocket-animation {
+  max-width: 500px;
+}
+@media (min-width: 1024px) {
+  .rocket-animation {
+    width: 600px;
+  }
+}

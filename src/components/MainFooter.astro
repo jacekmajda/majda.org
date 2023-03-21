@@ -5,13 +5,12 @@ import { Icon } from "astro-icon";
 const date = new Date().getFullYear()
 ---
 <footer>
-  <!-- two column grid laoyt footer in html -->
-  <PageSection padding={["pt-medium", "pb-small"]}>
+  <PageSection backgroundColor={'var(--color-gray)'} padding={["pt-medium", "pb-small"]}>
     <div class="grid">
       <div class="company-info flex flex-col">
         <div class="logo">
           <div class="logo__image-wrapper">
-            <img src="/assets/jm-logo.svg" alt="logo of Majda.org company">
+            <img src="/assets/jm-logo-square.svg" alt="logo of Majda.org company">
           </div>
             <a href="#">MAJDA<span>.ORG</span></a>
         </div>
@@ -45,14 +44,25 @@ const date = new Date().getFullYear()
 </footer>
 
 <style>
+  footer {
+    background-color: hsl(var(--color-gray));
+  }
   .grid {
+    --template-columns: 1fr;
+
     --grid-gap: 3rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: var(--template-columns);
+  }
+  @media (min-width: 1024px) {
+    .grid {
+      --template-columns: 1fr 1fr;
+    }
   }
 
 .company-info p {
   font-size: var(--fs-300);
   color: hsl(var(--color-dark-gray));
+  max-width: 30rem;
 }
 .link-icon {
   width: 2.5rem;
@@ -85,8 +95,8 @@ const date = new Date().getFullYear()
   color: hsl(var(--color-black));
 }
 .logo img {
-  border-radius: 50%;
-  border: 1px solid hsl(var(--color-black));
+  border-radius: 3px;
+  border: 1px solid hsl(var(--color-black)/ .05);
   width: 36px;
   height: 36px;
   margin-right: 1rem;

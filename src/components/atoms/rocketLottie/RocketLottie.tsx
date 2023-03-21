@@ -1,4 +1,4 @@
-// import "@lottiefiles/lottie-player";
+import './RocketLottie.css'
 
 export default function Lottie() {
 
@@ -6,7 +6,7 @@ export default function Lottie() {
       <lottie-player
         autoplay
         mode="slow"
-        style="width: 600px;"
+        class="rocket-animation"
         src="/assets/animations/rocket-1.json"
       >
       </lottie-player>

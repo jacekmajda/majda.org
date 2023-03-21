@@ -8,16 +8,43 @@ interface Props {
     | "pb-small"
     | "pb-medium"
   )[];
+  backgroundColor?: string;
 }
-
-const { padding, ...attrs } = Astro.props;
+const { padding, backgroundColor = 'var(--color-white)' } = Astro.props;
 ---
 
-<section class="container" class:list={[padding]} {...attrs}>
-  <slot />
+<section class="section" class:list={[padding]} >
+  <div class="container">
+    <slot />
+  </div>
 </section>
-<style>
+<style define:vars={{backgroundColor}}>
+  .section {
+    background-color: hsl(var(--backgroundColor));
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   .pt-large {
+      padding-top: 80px;
+    }
+    .pt-medium {
+      padding-top: 40px;
+    }
+    .pt-small {
+      padding-top: 20px;
+    }
+
+    .pb-large {
+      padding-bottom: 80px;
+    }
+    .pb-medium {
+      padding-bottom: 40px;
+    }
+    .pb-small {
+      padding-bottom: 20px;
+    }
+  @media (min-width: 1024px) {
+    .pt-large {
     padding-top: 120px;
   }
   .pt-medium {
@@ -35,5 +62,6 @@ const { padding, ...attrs } = Astro.props;
   }
   .pb-small {
     padding-bottom: 40px;
+  }
   }
 </style>

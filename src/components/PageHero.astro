@@ -1,5 +1,5 @@
 ---
-import Lottie from '../components/atoms/Lottie'
+import Lottie from '../components/atoms/rocketLottie/RocketLottie'
 ---
 <div class="hero grid" style="--gap: 3rem;">
   <div class="hero__image-wrapper">
@@ -7,23 +7,21 @@ import Lottie from '../components/atoms/Lottie'
     <div>
         <Lottie client:visible />
     </div>
-
   </div>
-
-
   <div class="hero-section flex">
     <h1 class="heading--1">Let’s create a website together!</h1>
     <p>
       Contact me today to schedule a consultation and see how I can help you
       reach your digital goals by creating beautiful website and functional app.
     </p>
-    <a href="#" class="button">Write to me &#8594</a>
+    <a href="#contact" class="button">Write to me &#8594</a>
   </div>
 </div>
 
 <style>
   .hero {
-    grid-template-columns: 1fr 2fr;
+    --grid-gap: 3rem;
+    grid-template-columns: 1fr;
   }
 
   .hero__image-wrapper {
@@ -31,13 +29,14 @@ import Lottie from '../components/atoms/Lottie'
   }
   .hero__image-wrapper div {
     display: flex;
-    position: absolute;
-    min-width: 600px;
-    height: 600px;
-    left: -20%;
-    bottom: -120px;
+    position: relative;
+    /* min-width: 600px; */
+    /* height: 600px; */
+    /* left: -20%; */
+    /* bottom: -120px; */
   }
   .hero-section {
+    order: -1;
     text-align: right;
     z-index: 2;
     flex-direction: column;
@@ -52,5 +51,22 @@ import Lottie from '../components/atoms/Lottie'
   }
   .hero-section .button {
     margin-top: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      grid-template-columns: 1fr 2fr;
+    }
+    .hero-section {
+    order: 1;
+    }
+    .hero__image-wrapper div {
+    display: flex;
+    position: absolute;
+    min-width: 600px;
+    height: 600px;
+    left: -20%;
+    bottom: -120px;
+  }
   }
 </style>

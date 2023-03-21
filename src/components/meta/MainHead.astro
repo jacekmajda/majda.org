@@ -11,6 +11,7 @@ const {
   keywords = "Majda, website, app, consultation, digital goals",
   title = "Majda.org - create a website with me",
   description = "Contact me today to schedule a consultation and see how I can help you reach your digital goals by creating custom, responsive website and functional app tailored to your needs.",
+  image = '/assets/og_image.jpg',
 } = Astro.props;
 ---
 
@@ -25,14 +26,14 @@ const {
 <meta property="og:title" content={title}>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://majda.org">
-<meta property="og:image" content="https://majda.org/images/logo.png">
+<meta property="og:image" content={image}>
 <meta property="og:description" content="Contact me today to schedule a consultation and see how I can help you reach your digital goals by creating custom, responsive website and functional app tailored to your needs.">
 
 <!-- Twitter metadata -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
-<meta name="twitter:image" content="https://majda.org/images/logo.png">
+<meta name="twitter:image" content={image}>
 
 <!-- <meta name="generator" content={Astro.generator} /> -->
 <title>{title}</title>
