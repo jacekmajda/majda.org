@@ -1,1 +1,0 @@
-import{g as e,a as o,t as a}from"./web.8f15d3bb.js";import"./index.e3b0c442.70a50464.js";const r=a('<lottie-player autoplay mode="slow" class="rocket-animation" src="/assets/animations/rocket-1.json"></lottie-player>',2);function l(){return(()=>{const t=e(r);return t._$owner=o(),t})()}export{l as default};
