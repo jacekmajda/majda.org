@@ -1,10 +1,13 @@
 import './ContactFormStyles.module.css';
-import { createSignal, Show } from 'solid-js'
+import { createSignal, Match, Switch } from 'solid-js'
 import { createStore } from "solid-js/store";
+import toast, { Toaster } from 'solid-toast';
 
 interface FormFields {
   email: string;
 }
+
+const notify = () => toast.error('Something went wrong with the contact form. Please try again later or contact me directly.');
 
 export default function ContactForm() {
 
@@ -25,7 +28,7 @@ export default function ContactForm() {
       return data;
 
     } catch (error) {
-      console.log('error: ', error);
+      notify()
     }
   }
 
@@ -39,7 +42,6 @@ export default function ContactForm() {
 
   const submit = (e: SubmitEvent) =>{
     e.preventDefault();
-    setSent(true)
 
     postFormData({email: form.email});
   }
@@ -74,7 +76,21 @@ export default function ContactForm() {
           </div>
           </Match>
         </Switch>
-
+        <div>
+        <Toaster
+          toastOptions={{
+            duration: 5000,
+            style: {
+              background: '#fff2f2',
+              color: '#333',
+              padding: '18px',
+              "font-family": "Inter, sans-serif",
+              "box-shadow": '0',
+              'border-radius': '0.5rem',
+            },
+          }}
+        />
+    </div>
     </form>
   );
 }
